@@ -1,0 +1,21 @@
+{
+  "name": "fydp-server",
+  "version": "1.0.0",
+  "description": "The backend server which stores the information for which items of clothign the user has chosen",
+  "main": "app.js",
+  "bin": {
+    "fydp-server": "run_server.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sadman Khan",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "1.15.2",
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
+    "lodash": "^4.16.4",
+    "safestart": "1.0.0"
+  }
+}
