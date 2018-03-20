@@ -12,9 +12,28 @@ let app = express();
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.get('/', function(req, res) {
-  res.send('Fydp Connection succeded');
+var most_recent_clothing_items = { "images": [
+  {
+    "clothing_type": "shorts",
+    "image_file_name": "superman_tshirt_transparent.png"
+  }
+]}
+
+app.get('/get_clothing_images', function(req, res) {
+  res.send(most_recent_clothing_items)
 });
+
+app.post('/set_clothing_images', function(req, res) {
+  let params = req.body
+
+
+  if (!params["images"]) {
+    return;
+  }
+
+  most_recent_clothing_items = req.body
+  res.sendStatus(200)
+})
 
 
 app.use(errorHandler);
